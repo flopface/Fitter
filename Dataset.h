@@ -12,8 +12,10 @@ private:
   std::vector<Point> points;
   double x_min;
   double x_max;
+  double x_range;
   double y_min;
   double y_max;
+  double y_range;
 
 public:
   Dataset(); // Default constructor
@@ -28,7 +30,7 @@ public:
   ~Dataset() {}; // Destructor
 
   void print() const;
-  void draw(SDL_Renderer* renderer) const;
+  void draw(SDL_Renderer* renderer);
 
 };
 

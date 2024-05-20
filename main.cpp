@@ -3,9 +3,9 @@
 #include <SDL2/SDL.h>
 #include <vector>
 
-const int SCREEN_WIDTH = 800;
-const int SCREEN_HEIGHT = 800;
-const int FRAMES_PER_SECOND = 60;
+#include "constants.h"
+#include "Point.h"
+#include "Dataset.h"
 
 int main()
 {
@@ -22,6 +22,8 @@ int main()
   Uint32 frame_time, current_frame_time, delta_time;
   size_t i;
 
+  Dataset d({1, 1.5, 2, 3}, {4, 4.5, 5, 6});
+
   while(running)
   {
     // Forcing fps and messing with frame time
@@ -36,6 +38,9 @@ int main()
     // Clearing the screen
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
+
+    // Drawing data
+    d.draw(renderer);
 
     // Updating screen
     SDL_RenderPresent(renderer);
