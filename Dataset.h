@@ -2,6 +2,7 @@
 #define DATASET_H
 
 #include <vector>
+#include <iostream>
 #include <SDL2/SDL.h>
 
 #include "Point.h"
@@ -19,6 +20,7 @@ private:
 
 public:
   Dataset(); // Default constructor
+  Dataset(std::string file_name, size_t skip_header = 1); // File extractor
   Dataset(std::vector<double> x_in, std::vector<double> y_in); // Parameterised constructor
 
   Dataset(const Dataset& other); // Copy constructor

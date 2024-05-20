@@ -3,7 +3,7 @@
 #include <SDL2/SDL.h>
 #include <vector>
 
-#include "constants.h"
+#include "functions.h"
 #include "Point.h"
 #include "Dataset.h"
 
@@ -22,7 +22,7 @@ int main()
   Uint32 frame_time, current_frame_time, delta_time;
   size_t i;
 
-  Dataset d({1, 1.5, 2, 3}, {4, 4.5, 5, 6});
+  Dataset d("data/1020.csv");
 
   while(running)
   {
@@ -41,6 +41,11 @@ int main()
 
     // Drawing data
     d.draw(renderer);
+
+    // Drawing axes
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    draw_vertical_line(renderer, GRAPH_LEFT-2*POINT_SIZE, GRAPH_TOP+2*POINT_SIZE, GRAPH_HEIGHT+4*POINT_SIZE, 3);
+    draw_horizontal_line(renderer, GRAPH_LEFT-2*POINT_SIZE, GRAPH_BOTTOM+2*POINT_SIZE, 3, GRAPH_WIDTH+4*POINT_SIZE);
 
     // Updating screen
     SDL_RenderPresent(renderer);
