@@ -2,6 +2,7 @@
 #define DATASET_H
 
 #include <vector>
+#include <SDL2/SDL.h>
 
 #include "Point.h"
 
@@ -9,6 +10,10 @@ class Dataset
 {
 private:
   std::vector<Point> points;
+  double x_min;
+  double x_max;
+  double y_min;
+  double y_max;
 
 public:
   Dataset(); // Default constructor
@@ -23,6 +28,8 @@ public:
   ~Dataset() {}; // Destructor
 
   void print() const;
+  void draw(SDL_Renderer* renderer) const;
+
 };
 
 #endif
