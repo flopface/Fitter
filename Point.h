@@ -1,10 +1,13 @@
+#ifndef POINT_H
+#define POINT_H
+
 struct Point
 {
-  int x;
-  int y;
+  double x;
+  double y;
 
   Point();
-  Point(int x_in, int y_in);
+  Point(double x_in, double y_in);
   ~Point();
 
   Point(const Point& other); // Copy constructor
@@ -13,3 +16,5 @@ struct Point
   Point& operator=(const Point& other); // Copy assignment
   Point& operator=(Point&& other) noexcept; // Move assignment
 };
+
+#endif

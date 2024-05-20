@@ -2,7 +2,7 @@
 
 Point::Point() : x{0}, y{0} {}
 
-Point::Point(int x_in, int y_in) : x{x_in}, y{y_in} {}
+Point::Point(double x_in, double y_in) : x{x_in}, y{y_in} {}
 
 Point::~Point() {}
 
